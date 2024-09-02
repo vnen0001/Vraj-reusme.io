@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Personal Website</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2c3e50;
+            --background-color: #f4f4f4;
+            --text-color: #333;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background-color);
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: white;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        nav {
+            background-color: var(--secondary-color);
+            padding: 10px;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0 10px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        nav ul li a:hover {
+            background-color: var(--primary-color);
+        }
+        main {
+            padding: 20px;
+        }
+        h2 {
+            color: var(--secondary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        .job, .project, .assessment {
+            margin-bottom: 20px;
+        }
+        .job-title, .project-title, .assessment-title {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        .job-company, .project-description, .assessment-description {
+            margin-top: 5px;
+        }
+        .job-date {
+            font-style: italic;
+            color: #7f8c8d;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .skill {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.9em;
+        }
+        .download-btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .download-btn:hover {
+            background-color: var(--secondary-color);
+        }
+        @media (max-width: 600px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            nav ul li {
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Your Name</h1>
+            <p>Web Developer | Student | Innovator</p>
+        </header>
+        
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#resume">Resume</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#assessments">University Assessments</a></li>
+            </ul>
+        </nav>
+
+        <main id="home">
+            <section class="section">
+                <h2>Welcome</h2>
+                <p>Hello! I'm Vraj Nena, a passionate web developer and student. This website showcases my professional experience, projects, and academic achievements.</p>
+            </section>
+        </main>
+
+        <main id="resume" style="display: none;">
+            <section class="section">
+                <h2>Resume</h2>
+                <p>Here's a summary of my professional experience and skills:</p>
+                <!-- Add your resume content here -->
+                <a href="#" class="download-btn">Download Full Resume (PDF)</a>
+            </section>
+        </main>
+
+        <main id="projects" style="display: none;">
+            <section class="section">
+                <h2>Projects</h2>
+                <div class="project">
+                    <p class="project-title">Project 1: [Project Name]</p>
+                    <p class="project-description">Brief description of the project, technologies used, and your role.</p>
+                </div>
+                <div class="project">
+                    <p class="project-title">Project 2: [Project Name]</p>
+                    <p class="project-description">Brief description of the project, technologies used, and your role.</p>
+                </div>
+                <!-- Add more projects as needed -->
+            </section>
+        </main>
+
+        <main id="assessments" style="display: none;">
+            <section class="section">
+                <h2>University Assessments</h2>
+                <div class="assessment">
+                    <p class="assessment-title">Assessment 1: [Course Name]</p>
+                    <p class="assessment-description">Brief description of the assessment, your approach, and the outcome.</p>
+                </div>
+                <div class="assessment">
+                    <p class="assessment-title">Assessment 2: [Course Name]</p>
+                    <p class="assessment-description">Brief description of the assessment, your approach, and the outcome.</p>
+                </div>
+                <!-- Add more assessments as needed -->
+            </section>
+        </main>
+    </div>
+
+    <script>
+        // Simple navigation script
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelectorAll('main').forEach(main => main.style.display = 'none');
+                document.querySelector(this.getAttribute('href')).style.display = 'block';
+            });
+        });
+    </script>
+</body>
+</html>
